@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>30 Dias de Oração e Fé | Devocional Digital</title>
+  <meta name="description" content="Devocional digital em PDF com 30 dias de orações, reflexões, versículos e espaço para anotações. Acesso imediato por R$ 19,90." />
+  <meta property="og:title" content="30 Dias de Oração e Fé" />
+  <meta property="og:description" content="Um devocional digital simples e bonito para organizar sua rotina de oração por 30 dias." />
+  <meta property="og:image" content="/assets/hero-devocional.png" />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700;9..144,800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink: #18201a;
+      --muted: #5d665b;
+      --paper: #fbf7ef;
+      --surface: #fffdf7;
+      --line: #ded3bd;
+      --leaf: #2f5b3d;
+      --leaf-deep: #173420;
+      --gold: #b88635;
+      --clay: #a05b49;
+      --rose: #f2dfd8;
+      --shadow: 0 24px 70px rgba(24, 32, 26, 0.16);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.55;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .page {
+      overflow: hidden;
+    }
+
+    .nav {
+      position: absolute;
+      z-index: 5;
+      top: 0;
+      left: 0;
+      right: 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 22px clamp(20px, 5vw, 72px);
+      color: #fff8e8;
+    }
+
+    .brand {
+      font-family: Fraunces, Georgia, serif;
+      font-size: clamp(1.05rem, 2vw, 1.35rem);
+      font-weight: 800;
+    }
+
+    .nav a {
+      text-decoration: none;
+    }
+
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 42px;
+      padding: 0 18px;
+      border: 1px solid rgba(255, 248, 232, 0.55);
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 800;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+    }
+
+    .hero {
+      position: relative;
+      min-height: 96vh;
+      display: grid;
+      align-items: end;
+      background: #122418;
+      color: #fff8e8;
+      isolation: isolate;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background:
+        linear-gradient(90deg, rgba(18, 36, 24, 0.92) 0%, rgba(18, 36, 24, 0.72) 38%, rgba(18, 36, 24, 0.18) 100%),
+        linear-gradient(0deg, rgba(18, 36, 24, 0.78) 0%, rgba(18, 36, 24, 0.04) 48%);
+    }
+
+    .hero-image {
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 66% center;
+    }
+
+    .hero-inner {
+      width: min(1180px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: 130px 0 62px;
+      display: grid;
+      grid-template-columns: minmax(0, 620px) minmax(280px, 390px);
+      gap: clamp(28px, 7vw, 90px);
+      align-items: end;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      width: fit-content;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 20px;
+      padding: 8px 13px;
+      border: 1px solid rgba(232, 204, 151, 0.45);
+      border-radius: 999px;
+      color: #f3d9a5;
+      background: rgba(23, 52, 32, 0.52);
+      font-size: 0.82rem;
+      font-weight: 800;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #f3d9a5;
+    }
+
+    h1,
+    h2,
+    h3 {
+      margin: 0;
+      font-family: Fraunces, Georgia, serif;
+      line-height: 0.98;
+      letter-spacing: 0;
+    }
+
+    h1 {
+      max-width: 11ch;
+      font-size: clamp(3.35rem, 8vw, 6.7rem);
+      text-wrap: balance;
+    }
+
+    .hero-copy {
+      max-width: 610px;
+      margin: 24px 0 0;
+      color: rgba(255, 248, 232, 0.9);
+      font-size: clamp(1.05rem, 2vw, 1.32rem);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 34px;
+    }
+
+    .button {
+      display: inline-flex;
+      min-height: 56px;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 0 24px;
+      border-radius: 999px;
+      border: 0;
+      text-decoration: none;
+      font-weight: 900;
+      transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
+      cursor: pointer;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+    }
+
+    .button-primary {
+      color: #23180b;
+      background: linear-gradient(135deg, #f4d99d, #c8913e);
+      box-shadow: 0 18px 36px rgba(0, 0, 0, 0.24);
+    }
+
+    .button-secondary {
+      color: #fff8e8;
+      border: 1px solid rgba(255, 248, 232, 0.35);
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .hero-panel {
+      border: 1px solid rgba(244, 217, 157, 0.3);
+      border-radius: 8px;
+      padding: 24px;
+      background: rgba(255, 248, 232, 0.12);
+      box-shadow: 0 24px 90px rgba(0, 0, 0, 0.22);
+      backdrop-filter: blur(14px);
+    }
+
+    .price-row {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 20px;
+      border-bottom: 1px solid rgba(255, 248, 232, 0.22);
+      padding-bottom: 18px;
+      margin-bottom: 18px;
+    }
+
+    .price {
+      font-family: Fraunces, Georgia, serif;
+      font-size: 3.2rem;
+      font-weight: 800;
+    }
+
+    .badge {
+      color: #173420;
+      border-radius: 999px;
+      padding: 8px 12px;
+      background: #f3d9a5;
+      font-size: 0.74rem;
+      font-weight: 900;
+      white-space: nowrap;
+    }
+
+    .check-list {
+      display: grid;
+      gap: 12px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      color: rgba(255, 248, 232, 0.9);
+    }
+
+    .check-list li {
+      display: grid;
+      grid-template-columns: 22px 1fr;
+      gap: 10px;
+    }
+
+    .check-list li::before {
+      content: "✓";
+      color: #f3d9a5;
+      font-weight: 900;
+    }
+
+    section {
+      padding: clamp(62px, 8vw, 108px) clamp(20px, 5vw, 72px);
+    }
+
+    .section-inner {
+      width: min(1120px, 100%);
+      margin: 0 auto;
+    }
+
+    .section-heading {
+      max-width: 760px;
+      margin-bottom: 36px;
+    }
+
+    .kicker {
+      margin: 0 0 12px;
+      color: var(--clay);
+      font-size: 0.82rem;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    h2 {
+      font-size: clamp(2.35rem, 5vw, 4.5rem);
+      color: var(--leaf-deep);
+    }
+
+    .lead {
+      max-width: 720px;
+      margin: 18px 0 0;
+      color: var(--muted);
+      font-size: 1.08rem;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .feature-card {
+      min-height: 220px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 28px;
+      background: var(--surface);
+      box-shadow: 0 12px 34px rgba(24, 32, 26, 0.06);
+    }
+
+    .feature-icon {
+      display: grid;
+      width: 42px;
+      height: 42px;
+      margin-bottom: 26px;
+      place-items: center;
+      border-radius: 50%;
+      color: #fff;
+      background: var(--leaf);
+      font-weight: 900;
+    }
+
+    h3 {
+      margin-bottom: 12px;
+      font-size: 1.55rem;
+      color: var(--leaf-deep);
+    }
+
+    .feature-card p,
+    .step p,
+    .faq p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .preview {
+      background: #f0e8da;
+    }
+
+    .preview-grid {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: clamp(28px, 6vw, 72px);
+      align-items: center;
+    }
+
+    .mockup {
+      position: relative;
+      min-height: 560px;
+    }
+
+    .page-sheet {
+      position: absolute;
+      width: min(82%, 420px);
+      min-height: 530px;
+      padding: 38px 34px;
+      border: 1px solid #dfd0b6;
+      border-radius: 8px;
+      background: #fffdf8;
+      box-shadow: var(--shadow);
+    }
+
+    .page-sheet.back {
+      top: 34px;
+      left: 70px;
+      transform: rotate(5deg);
+      background: #f8eadf;
+    }
+
+    .page-sheet.front {
+      top: 0;
+      left: 0;
+      transform: rotate(-3deg);
+    }
+
+    .sheet-day {
+      color: var(--gold);
+      font-size: 0.78rem;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    .sheet-title {
+      margin: 18px 0;
+      font-family: Fraunces, Georgia, serif;
+      color: var(--leaf-deep);
+      font-size: 2.35rem;
+      line-height: 1.05;
+    }
+
+    .sheet-line {
+      height: 1px;
+      margin: 26px 0;
+      background: #e5d7bf;
+    }
+
+    .note-lines {
+      display: grid;
+      gap: 16px;
+      margin-top: 28px;
+    }
+
+    .note-lines span {
+      height: 1px;
+      background: #e0d5c3;
+    }
+
+    .content-list {
+      display: grid;
+      gap: 16px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .content-list li {
+      display: grid;
+      grid-template-columns: 42px 1fr;
+      gap: 16px;
+      align-items: start;
+      padding: 18px 0;
+      border-bottom: 1px solid rgba(47, 91, 61, 0.18);
+    }
+
+    .number {
+      display: grid;
+      width: 42px;
+      height: 42px;
+      place-items: center;
+      border-radius: 50%;
+      color: #fff;
+      background: var(--clay);
+      font-weight: 900;
+    }
+
+    .band {
+      color: #fff8e8;
+      background:
+        linear-gradient(135deg, rgba(23, 52, 32, 0.96), rgba(47, 91, 61, 0.96)),
+        url("assets/hero-devocional.png") center/cover;
+    }
+
+    .band-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: clamp(28px, 6vw, 80px);
+      align-items: center;
+    }
+
+    .band h2 {
+      color: #fff8e8;
+    }
+
+    .band .lead {
+      color: rgba(255, 248, 232, 0.82);
+    }
+
+    .steps {
+      display: grid;
+      gap: 14px;
+    }
+
+    .step {
+      border: 1px solid rgba(255, 248, 232, 0.18);
+      border-radius: 8px;
+      padding: 22px;
+      background: rgba(255, 255, 255, 0.07);
+    }
+
+    .step strong {
+      display: block;
+      margin-bottom: 5px;
+      color: #f3d9a5;
+      font-size: 1.05rem;
+    }
+
+    .step p {
+      color: rgba(255, 248, 232, 0.82);
+    }
+
+    .offer {
+      background: var(--surface);
+    }
+
+    .offer-box {
+      display: grid;
+      grid-template-columns: 1fr 0.95fr;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      box-shadow: var(--shadow);
+    }
+
+    .offer-copy {
+      padding: clamp(32px, 5vw, 58px);
+    }
+
+    .offer-side {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: clamp(32px, 5vw, 58px);
+      color: #fff8e8;
+      background: var(--leaf-deep);
+    }
+
+    .offer-price {
+      margin: 8px 0 18px;
+      font-family: Fraunces, Georgia, serif;
+      font-size: clamp(4rem, 9vw, 6.4rem);
+      line-height: 0.9;
+    }
+
+    .offer-price small {
+      font-family: Inter, sans-serif;
+      font-size: 1.15rem;
+      font-weight: 800;
+    }
+
+    .mini {
+      color: rgba(255, 248, 232, 0.72);
+      font-size: 0.92rem;
+    }
+
+    .faq-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .faq {
+      border-top: 1px solid var(--line);
+      padding-top: 22px;
+    }
+
+    footer {
+      padding: 34px 20px;
+      color: #7b7468;
+      background: #efe5d4;
+      text-align: center;
+      font-size: 0.88rem;
+    }
+
+    .mobile-break {
+      display: none;
+    }
+
+    @media (max-width: 880px) {
+      .nav {
+        padding: 18px 20px;
+      }
+
+      .nav-cta {
+        display: none;
+      }
+
+      .hero {
+        min-height: auto;
+      }
+
+      .hero::after {
+        background:
+          linear-gradient(180deg, rgba(18, 36, 24, 0.46) 0%, rgba(18, 36, 24, 0.9) 54%, rgba(18, 36, 24, 0.98) 100%);
+      }
+
+      .hero-image {
+        height: 54%;
+        object-position: center top;
+      }
+
+      .hero-inner {
+        grid-template-columns: 1fr;
+        padding: 46vh 0 42px;
+      }
+
+      h1 {
+        max-width: 10ch;
+      }
+
+      .hero-panel {
+        padding: 20px;
+      }
+
+      .features,
+      .preview-grid,
+      .band-grid,
+      .offer-box,
+      .faq-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .mockup {
+        min-height: 460px;
+      }
+
+      .page-sheet {
+        width: 86%;
+        min-height: 430px;
+        padding: 28px 24px;
+      }
+
+      .page-sheet.back {
+        left: 42px;
+      }
+
+      .sheet-title {
+        font-size: 2rem;
+      }
+
+      .mobile-break {
+        display: inline;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .hero-actions .button {
+        width: 100%;
+      }
+
+      .price-row {
+        align-items: start;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .feature-card {
+        min-height: auto;
+      }
+
+      .content-list li {
+        grid-template-columns: 34px 1fr;
+      }
+
+      .number {
+        width: 34px;
+        height: 34px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <nav class="nav" aria-label="Navegação principal">
+      <a class="brand" href="#top">30 Dias de Oração e Fé</a>
+      <a class="nav-cta" href="#oferta">Ver oferta</a>
+    </nav>
+
+    <header class="hero" id="top">
+      <img class="hero-image" src="assets/hero-devocional.png" alt="Devocional digital 30 Dias de Oração e Fé sobre uma mesa com luz suave" />
+      <div class="hero-inner">
+        <div>
+          <span class="eyebrow">Devocional digital em PDF</span>
+          <h1>30 Dias de Oração e Fé</h1>
+          <p class="hero-copy">Um material simples, bonito e direto para acompanhar sua rotina devocional com orações, reflexões, versículos e espaço para escrever seus pedidos e gratidão.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#oferta">Quero baixar agora</a>
+            <a class="button button-secondary" href="#conteudo">Ver o que vem no PDF</a>
+          </div>
+        </div>
+
+        <aside class="hero-panel" aria-label="Resumo da oferta">
+          <div class="price-row">
+            <span class="price">R$ 19,90</span>
+            <span class="badge">Acesso imediato</span>
+          </div>
+          <ul class="check-list">
+            <li>PDF digital para usar no celular, tablet ou imprimir.</li>
+            <li>30 dias com oração, reflexão, versículo e anotações.</li>
+            <li>Compra segura pelo checkout da Cakto.</li>
+          </ul>
+        </aside>
+      </div>
+    </header>
+
+    <section aria-labelledby="para-quem">
+      <div class="section-inner">
+        <div class="section-heading">
+          <p class="kicker">Rotina devocional</p>
+          <h2 id="para-quem">Mais clareza para seus momentos de oração</h2>
+          <p class="lead">O devocional foi pensado para quem quer reservar alguns minutos do dia para leitura, oração e registro pessoal, sem complicar a rotina.</p>
+        </div>
+
+        <div class="features">
+          <article class="feature-card">
+            <span class="feature-icon">1</span>
+            <h3>Começo guiado</h3>
+            <p>Cada dia traz um tema e uma direção simples para você iniciar seu momento devocional com foco.</p>
+          </article>
+          <article class="feature-card">
+            <span class="feature-icon">2</span>
+            <h3>Espaço para escrever</h3>
+            <p>Registre pedidos, respostas, gratidão e pensamentos que surgirem durante a leitura.</p>
+          </article>
+          <article class="feature-card">
+            <span class="feature-icon">3</span>
+            <h3>Uso flexível</h3>
+            <p>Abra no celular, salve no tablet ou imprima as páginas para montar seu próprio planner.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="preview" id="conteudo" aria-labelledby="conteudo-title">
+      <div class="section-inner preview-grid">
+        <div class="mockup" aria-hidden="true">
+          <div class="page-sheet back"></div>
+          <div class="page-sheet front">
+            <div class="sheet-day">Dia 01</div>
+            <div class="sheet-title">Entregue o dia em oração</div>
+            <p>Uma breve reflexão para orientar sua leitura e preparar seu coração para o dia.</p>
+            <div class="sheet-line"></div>
+            <strong>Minha oração de hoje</strong>
+            <div class="note-lines">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <p class="kicker">O que vem no material</p>
+          <h2 id="conteudo-title">Um PDF organizado para 30 dias</h2>
+          <p class="lead">A ideia é tirar o peso de “por onde começo?” e te entregar uma sequência pronta para acompanhar a sua prática devocional.</p>
+
+          <ul class="content-list">
+            <li>
+              <span class="number">01</span>
+              <div><strong>Oração guiada diária</strong><br />Textos curtos para ajudar você a iniciar cada dia com intenção.</div>
+            </li>
+            <li>
+              <span class="number">02</span>
+              <div><strong>Reflexões e versículos</strong><br />Páginas com temas de fé, gratidão, descanso, esperança e confiança.</div>
+            </li>
+            <li>
+              <span class="number">03</span>
+              <div><strong>Planner devocional</strong><br />Campos para anotar pedidos, gratidão, aprendizados e lembretes pessoais.</div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="band" aria-labelledby="como-funciona">
+      <div class="section-inner band-grid">
+        <div>
+          <p class="kicker">Acesso simples</p>
+          <h2 id="como-funciona">Comprou, baixou, começou</h2>
+          <p class="lead">Depois da confirmação do pagamento, você recebe o acesso ao produto digital. Sem frete, sem espera e sem instalação de aplicativo.</p>
+        </div>
+
+        <div class="steps">
+          <div class="step">
+            <strong>1. Clique no botão</strong>
+            <p>Você será direcionado para o checkout seguro da Cakto.</p>
+          </div>
+          <div class="step">
+            <strong>2. Finalize a compra</strong>
+            <p>O pagamento é feito na plataforma, com o valor único de R$ 19,90.</p>
+          </div>
+          <div class="step">
+            <strong>3. Acesse o PDF</strong>
+            <p>Use o material no celular, tablet, computador ou imprima.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="offer" id="oferta" aria-labelledby="oferta-title">
+      <div class="section-inner offer-box">
+        <div class="offer-copy">
+          <p class="kicker">Oferta digital</p>
+          <h2 id="oferta-title">Leve o devocional completo hoje</h2>
+          <p class="lead">Receba o PDF “30 Dias de Oração e Fé” e comece uma sequência devocional com páginas prontas para acompanhar sua rotina.</p>
+        </div>
+
+        <div class="offer-side">
+          <span>Pagamento único</span>
+          <div class="offer-price"><small>R$</small>19,90</div>
+          <a class="button button-primary" href="https://pay.cakto.com.br/kvc74av_882225?utm_source=google&utm_medium=ads&utm_campaign=devocional_30dias&utm_content=landing_vercel" rel="nofollow">Baixar agora</a>
+          <p class="mini">Você será enviado para o checkout da Cakto para concluir a compra com segurança.</p>
+        </div>
+      </div>
+    </section>
+
+    <section aria-labelledby="duvidas">
+      <div class="section-inner">
+        <div class="section-heading">
+          <p class="kicker">Dúvidas rápidas</p>
+          <h2 id="duvidas">Antes de baixar</h2>
+        </div>
+
+        <div class="faq-grid">
+          <article class="faq">
+            <h3>É físico ou digital?</h3>
+            <p>É um produto digital em PDF. Você pode usar no celular ou imprimir se preferir.</p>
+          </article>
+          <article class="faq">
+            <h3>Preciso de aplicativo?</h3>
+            <p>Não. Basta abrir o arquivo PDF em qualquer leitor comum do celular ou computador.</p>
+          </article>
+          <article class="faq">
+            <h3>Quando recebo?</h3>
+            <p>O acesso é liberado após a confirmação do pagamento pelo checkout.</p>
+          </article>
+          <article class="faq">
+            <h3>Posso imprimir?</h3>
+            <p>Sim. O material foi pensado para funcionar bem em formato digital ou impresso.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    Produto digital independente. Compra processada pela Cakto. Este material é devocional e não substitui aconselhamento profissional.
+  </footer>
+</body>
+</html>
